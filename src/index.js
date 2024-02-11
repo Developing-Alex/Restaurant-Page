@@ -1,5 +1,6 @@
 import { contentLoader, headLoader } from "./page-load";
 import "./style.css";
+import FriedChicken from './gingham-fried-chicken.jpg';
 
 function component(){
   const header = document.querySelector('header');
@@ -8,7 +9,13 @@ function component(){
 
   const content = document.getElementById('content');
 
-  contentLoader().forEach(e => content.appendChild(e))
+  contentLoader().forEach(e => content.appendChild(e));
+
+  const friedChicken = new Image();
+  friedChicken.src = FriedChicken;
+  friedChicken.id = 'friedChicken';
+
+  content.appendChild(friedChicken);
 }
 
 
