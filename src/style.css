@@ -1,0 +1,12 @@
+:root {
+  font-size: 16px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+#hello {
+  color: red;
+}
