@@ -1,4 +1,4 @@
-import Chef from './pexels-sides-imagery-3351927.jpg'
+import Chef from './assets/images/pexels-sides-imagery-3351927.jpg'
 
 const headLoader = () => {
   const title = document.createElement('h1');
