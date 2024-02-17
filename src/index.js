@@ -4,7 +4,7 @@ import menuPageLoader from "./menu-load";
 import "./style.css";
 
 
-function component(func) {
+export default function component() {
   const header = document.querySelector('header');
 
   //Generates the name of the restaurant inside of the header which prepends the navbar
@@ -20,7 +20,7 @@ function component(func) {
     content.appendChild(innerContent)
   };
   
-  //button specific function to be call with an event listener
+  //button specific function to be called with an event listener
   const menuCompontent = () => {
     while(contentContainer.firstChild){
       contentContainer.removeChild(contentContainer.firstChild);
@@ -41,15 +41,18 @@ function component(func) {
   //const homePageContent = () => content.appendChild(homePageLoader(contentContainer));
 
   
-  //^^This will live in the menu-page-load and contact-page-load
-  //homeBtnComponent();
+  const homeBtn = document.getElementById('home-btn');
 
-  //homePageContent();
+  //button specific function to be called with an event listener
+  const homeComponent = () => {
+    while(contentContainer.firstChild){
+      contentContainer.removeChild(contentContainer.firstChild);
+    }
+    contentGenerator(homePageLoader(contentContainer));
+  };
 
-  return {
-    //homePageContent
-  }
+  homeBtn.addEventListener('click', homeComponent);
+
 }
 
-export default component
 component();

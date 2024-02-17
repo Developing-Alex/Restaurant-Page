@@ -14,6 +14,9 @@ export default headLoader;
 
 const homePageLoader = (container) => {
 
+  container.style.display = 'flex';
+  container.style.flexDirection = 'column';
+
   const heading = document.createElement('h2');
 
   heading.textContent = 'Best Chicken in America!';
