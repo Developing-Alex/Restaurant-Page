@@ -1,7 +1,14 @@
-const menuPageLoader = (container) => {
+const menuPageLoader = (container) => {  
+  
+  //Meats
 
-  container.style.display = 'grid';
-  container.style.gridTemplateColumns = 'repeat(2, 1fr)';
+  const meatContainer = document.createElement('div');
+  meatContainer.id = 'meat-container';
+
+  const meatTitle = document.createElement('h2');
+  meatTitle.id = 'meat-title';
+  meatTitle.className = 'menu-title'
+  meatTitle.innerText = 'Meats';
 
   const chicken = document.createElement('div');
   chicken.id = 'chicken-container';
@@ -72,7 +79,93 @@ const menuPageLoader = (container) => {
   pulledPork.appendChild(pulledPorkTitle);
   pulledPork.appendChild(pulledPorkDescription);
 
-  const menu = [chicken, brisket, babyBackRibs, pulledPork];
+  const meatMenu = [chicken, brisket, babyBackRibs, pulledPork];
+
+  meatMenu.forEach(e => meatContainer.appendChild(e));
+
+  //Sides
+
+  const sidesContainer = document.createElement('div');
+  sidesContainer.id = 'sides-container';
+
+  const sidesTitle = document.createElement('h2');
+  sidesTitle.id = 'sides-title';
+  sidesTitle.className = 'menu-title';
+  sidesTitle.innerText = 'Sides';
+
+  const bakedBeans = document.createElement('div');
+  bakedBeans.id = 'baked-beans-container';
+  bakedBeans.className = 'menu-item';
+
+  const bakedBeansTitle = document.createElement('h3');
+  bakedBeansTitle.id = 'baked-beans-title';
+  bakedBeansTitle.className = 'menu-item-title';
+  bakedBeansTitle.innerText = 'Baked Beans';
+
+  const bakedBeansDescription = document.createElement('p');
+  bakedBeansDescription.id = 'baked-beans-description';
+  bakedBeansDescription.className = 'menu-item-description';
+  bakedBeansDescription.innerText = "Grandma's recipe! A crowd favorite! Saucy, rich and complexe flavor that never disappoints!";
+
+  bakedBeans.appendChild(bakedBeansTitle);
+  bakedBeans.appendChild(bakedBeansDescription);
+
+  const cornBread = document.createElement('div');
+  cornBread.id = 'corn-bread-container';
+  cornBread.className = 'menu-item';
+
+  const cornBreadTitle = document.createElement('h3');
+  cornBreadTitle.id = 'corn-bread-title';
+  cornBreadTitle.className = 'menu-item-title';
+  cornBreadTitle.innerText = 'Honey Corn Bread';
+
+  const cornBreadDescription = document.createElement('p');
+  cornBreadDescription.id = 'corn-bread-description';
+  cornBreadDescription.className = 'menu-item-description';
+  cornBreadDescription.innerText = "Moist honey drizzled corn bread, hot and ready to enjoy!";
+
+  cornBread.appendChild(cornBreadTitle);
+  cornBread.appendChild(cornBreadDescription);
+
+  const macAndCheese = document.createElement('div');
+  macAndCheese.id = 'mac-n-cheese-container';
+  macAndCheese.className = 'menu-item';
+
+  const macAndCheeseTitle = document.createElement('h3');
+  macAndCheeseTitle.id = 'mac-n-cheese-title';
+  macAndCheeseTitle.className = 'menu-item-title';
+  macAndCheeseTitle.innerText = 'Mac-n-Cheese';
+
+  const macAndCheeseDescription = document.createElement('p');
+  macAndCheeseDescription.id = 'mac-n-cheese-description';
+  macAndCheeseDescription.className = 'menu-item-description';
+  macAndCheeseDescription.innerText = "Melted into a rich and creamy cheese sauce, for the ultimate in cheesy deliciousness!";
+
+  macAndCheese.appendChild(macAndCheeseTitle);
+  macAndCheese.appendChild(macAndCheeseDescription);
+
+  const coleslaw = document.createElement('div');
+  coleslaw.id = 'colslaw-container';
+  coleslaw.className = 'menu-item';
+
+  const coleslawTitle = document.createElement('h3');
+  coleslawTitle.id = 'coleslaw-title';
+  coleslawTitle.className = 'menu-item-title';
+  coleslawTitle.innerText = 'Coleslaw';
+
+  const coleslawDescription = document.createElement('p');
+  coleslawDescription.id = 'colslaw-description';
+  coleslawDescription.className = 'menu-item-description';
+  coleslawDescription.innerText = "Light and creamy with a sweet tangyness that pairs well with our assortment of meats!";
+
+  coleslaw.appendChild(coleslawTitle);
+  coleslaw.appendChild(coleslawDescription);
+
+  const sidesMenu = [bakedBeans, cornBread, macAndCheese, coleslaw];
+
+  sidesMenu.forEach(e => sidesContainer.appendChild(e));
+
+  const menu = [meatTitle, meatContainer, sidesTitle, sidesContainer]
 
   menu.forEach(e => container.appendChild(e));
 
