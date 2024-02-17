@@ -1,5 +1,4 @@
 import Chef from './assets/images/pexels-sides-imagery-3351927.jpg';
-import menuPageLoader from "./menu-load";
 
 const headLoader = () => {
   const title = document.createElement('h1');
