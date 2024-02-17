@@ -1,4 +1,5 @@
-import Chef from './assets/images/pexels-sides-imagery-3351927.jpg'
+import Chef from './assets/images/pexels-sides-imagery-3351927.jpg';
+import menuPageLoader from "./menu-load";
 
 const headLoader = () => {
   const title = document.createElement('h1');
@@ -34,10 +35,5 @@ const homePageLoader = (container) => {
   return container;
 }
 
-const homePageClickHandler = () => {
-  const homeBtn = document.getElementById('home-btn');
 
-  homeBtn.onclick = homePageLoader;
-}
-
-export { homePageLoader, homePageClickHandler}
+export { homePageLoader }
