@@ -7,24 +7,32 @@ import "./style.css";
 function component(func) {
   const header = document.querySelector('header');
 
+  //Generates the name of the restaurant inside of the header which prepends the navbar
   header.prepend(headLoader());
 
   const content = document.getElementById('content');
-
+  
   const contentContainer = document.createElement('div');
   contentContainer.id = 'content-container';
 
-  const menuBtn = document.getElementById('menu-btn');
-
+  //this function is used in conjection with button specific functions to generate content in the contentContainer
   const contentGenerator = (innerContent) => {
     content.appendChild(innerContent)
   };
   
-  //needs to remove current content in contentContiner before generating
-  const menuCompontent = () => contentGenerator(menuPageLoader(contentContainer));
+  //button specific function to be call with an event listener
+  const menuCompontent = () => {
+    while(contentContainer.firstChild){
+      contentContainer.removeChild(contentContainer.firstChild);
+    }
+    contentGenerator(menuPageLoader(contentContainer));
+  };
+
+  const menuBtn = document.getElementById('menu-btn');
 
   menuBtn.addEventListener('click', menuCompontent);
 
+  //Initial generation of content upon loading the webpage at the home screen
   contentGenerator(homePageLoader(contentContainer));
 
 
@@ -39,7 +47,7 @@ function component(func) {
   //homePageContent();
 
   return {
-    homePageContent
+    //homePageContent
   }
 }
 
