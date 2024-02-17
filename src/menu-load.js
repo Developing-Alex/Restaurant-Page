@@ -1,7 +1,3 @@
-import headLoader from "./home-page-load";
-import component from "./index";
-import { homePageLoader } from "./home-page-load";
-
 const menuPageLoader = (container) => {
 
   container.style.display = 'grid';
@@ -41,7 +37,42 @@ const menuPageLoader = (container) => {
   brisket.appendChild(brisketTitle);
   brisket.appendChild(brisketDescription);
 
-  const menu = [chicken, brisket];
+
+  const babyBackRibs = document.createElement('div');
+  babyBackRibs.id = 'baby-back-ribs-container';
+  babyBackRibs.className = 'menu-item';
+
+  const babyBackRibsTitle = document.createElement('h3');
+  babyBackRibsTitle.id = 'baby-back-ribs-title';
+  babyBackRibsTitle.className = 'menu-item-title';
+  babyBackRibsTitle.innerText = 'Baby-Back Ribs';
+
+  const babyBackRibsDescription = document.createElement('p');
+  babyBackRibsDescription.id = 'baby-back-ribs-description';
+  babyBackRibsDescription.className = 'menu-item-description';
+  babyBackRibsDescription.innerHTML = `Fall of the bone tender baby-back ribs that speak for themselves! Served with a side of our "Smokey, Spicey & Sweet" barbeque sauce!`;
+  
+  babyBackRibs.appendChild(babyBackRibsTitle);
+  babyBackRibs.appendChild(babyBackRibsDescription);
+
+  const pulledPork = document.createElement('div');
+  pulledPork.id = 'pulled-pork-container';
+  pulledPork.className = 'menu-item';
+
+  const pulledPorkTitle = document.createElement('h3');
+  pulledPorkTitle.id = 'pulled-pork-title';
+  pulledPorkTitle.className = 'menu-item-title';
+  pulledPorkTitle.innerText = 'Pulled Pork';
+
+  const pulledPorkDescription = document.createElement('p');
+  pulledPorkDescription.id = 'pulled-pork-description';
+  pulledPorkDescription.className = 'menu-item-description';
+  pulledPorkDescription.innerHTML = `Pork shoulder so tender and juicy, you'll wanna call your meemaw to spread the word! Served with a side of our "Smokey, Spicey & Sweet" barbeque sauce!`;
+  
+  pulledPork.appendChild(pulledPorkTitle);
+  pulledPork.appendChild(pulledPorkDescription);
+
+  const menu = [chicken, brisket, babyBackRibs, pulledPork];
 
   menu.forEach(e => container.appendChild(e));
 
