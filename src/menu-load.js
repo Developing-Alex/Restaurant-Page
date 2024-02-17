@@ -10,7 +10,7 @@ const menuPageLoader = (container) => {
 
   const chickenTitle = document.createElement('h3');
   chickenTitle.id = 'chicken-title';
-  chickenTitle.innerText = 'Barbequed Chicken';
+  chickenTitle.innerText = 'Barbeque Chicken';
 
   const chickenDescription = document.createElement('p');
   chickenDescription.id = 'chicken-description';
