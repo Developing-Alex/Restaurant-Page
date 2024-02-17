@@ -9,6 +9,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Barlow';
+  src: url('./assets/fonts/Barlow-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   background-image: url('./assets/images/gingham-fried-chicken.jpg');
   background-position: center;
@@ -89,18 +96,22 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
   background-color: rgba(255, 0, 0, 0.5);
   width: 600px;
-  height: 500px;
-  border-radius: 25px;
+  min-height: 500px;
+  border-radius: 15px;
   margin-top: 40px;
-  border: 2px solid whitesmoke;
+  border: 3px solid whitesmoke;
+  padding: 20px;
 }
 
 #heading {
+  font-family: 'Limelight';
   color: whitesmoke;
   margin: 0;
   padding-top: 15px;
+  animation: fadeIn 1.5s;
 }
 
 #about {
@@ -109,32 +120,50 @@ button:hover {
   text-align: center;
   width: 550px;
   margin: 0;
-  padding: 15px;
+  padding: 0;
+  animation: fadeIn 1.5s;
+  font-family: 'Barlow';
 }
 
 #chef-image {
   border-radius: 49%;
   width: 200px;
   border: whitesmoke solid 3px;
-  margin-top: 10px;
+  animation: fadeIn 1.5s;
 }
 
-#chicken-container {
+.menu-item {
+  animation: fadeIn 1.5s;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: whitesmoke;
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.766);
   padding: 15px;
   gap: 10px;
   border-radius: 10px;
+  border: rgb(0, 0, 0) dotted 3px;
 }
 
-#chicken-title {
+.menu-item-title {
+  font-family: 'Limelight';
   margin: 0;
 }
 
-#chicken-description {
+.menu-item-description {
+  font-family: 'Barlow';
+  font-weight: bold;
   margin: 0;
   text-align: center;
   text-wrap: wrap;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
