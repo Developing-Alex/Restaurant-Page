@@ -1,6 +1,7 @@
 import { homePageLoader } from "./home-page-load";
 import headLoader from "./home-page-load";
 import menuPageLoader from "./menu-load";
+import contactLoader from "./contact-load";
 import "./style.css";
 
 
@@ -52,6 +53,17 @@ export default function component() {
   };
 
   homeBtn.addEventListener('click', homeComponent);
+
+  const contactBtn = document.getElementById('contact-btn');
+
+  const contactComponent = () => {
+    while(contentContainer.firstChild){
+      contentContainer.removeChild(contentContainer.firstChild);
+    }
+    contentGenerator(contactLoader(contentContainer));
+  };
+
+  contactBtn.addEventListener('click', contactComponent);
 
 }
 
