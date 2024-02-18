@@ -1,5 +1,5 @@
 # Restaurant-Page
-Website generated entirely through Javascript in conjuction with webpack
+Web app created using Javascript, CSS and HTML. HTML generated entirely though Javascript. Everthing bundled using webpack.
 
 Chicken & Brisket Photo by [Peter Pham](https://unsplash.com/@phambot?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/fried-food-on-red-and-white-checkered-textile-DMnYfIAfYSs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 
