@@ -5,7 +5,6 @@ export default function contactLoader(container){
   container.style.flexDirection = 'column';
 
   const orderClick = document.createElement('button');
-  orderClick.href = '#';
   orderClick.id = 'order-click';
   orderClick.innerText = 'Order Here';
 
