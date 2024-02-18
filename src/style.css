@@ -19,8 +19,8 @@
 body {
   background-image: url('./assets/images/gingham-fried-chicken.jpg');
   background-position: center;
-  position: static;
   background-size: cover;
+  background-attachment: fixed;
   margin: 0;
   height: 100vh;
 }
@@ -119,6 +119,15 @@ button:hover {
   color: whitesmoke;
   text-align: center;
   width: 550px;
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 1.5s;
+  font-family: 'Barlow';
+}
+
+#order-online {
+  font-weight: bold;
+  color: whitesmoke;
   margin: 0;
   padding: 0;
   animation: fadeIn 1.5s;
