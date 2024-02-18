@@ -6,12 +6,36 @@ import "./style.css";
 
 
 export default function component() {
-  const header = document.querySelector('header');
+  const header = document.createElement('header');
+
+  document.body.appendChild(header);
+
+  const nav = document.createElement('nav');
+
+  const homeBtn = document.createElement('button');
+  homeBtn.id = 'home-btn';
+  homeBtn.innerText = 'Home'
+
+  const menuBtn = document.createElement('button');
+  menuBtn.id = 'menu-btn';
+  menuBtn.innerText = 'Menu';
+
+  const contactBtn = document.createElement('button');
+  contactBtn.id = 'contact-btn';
+  contactBtn.innerText = 'Contact';
+
+  const navArr = [homeBtn, menuBtn, contactBtn];
+
+  navArr.forEach(e => nav.appendChild(e));
+  header.appendChild(nav);
 
   //Generates the name of the restaurant inside of the header which prepends the navbar
   header.prepend(headLoader());
 
-  const content = document.getElementById('content');
+  const content = document.createElement('div');
+  content.id = ('content');
+
+  document.body.appendChild(content);
   
   const contentContainer = document.createElement('div');
   contentContainer.id = 'content-container';
@@ -29,7 +53,7 @@ export default function component() {
     contentGenerator(menuPageLoader(contentContainer));
   };
 
-  const menuBtn = document.getElementById('menu-btn');
+  
 
   menuBtn.addEventListener('click', menuCompontent);
 
@@ -42,7 +66,7 @@ export default function component() {
   //const homePageContent = () => content.appendChild(homePageLoader(contentContainer));
 
   
-  const homeBtn = document.getElementById('home-btn');
+  
 
   //button specific function to be called with an event listener
   const homeComponent = () => {
@@ -54,7 +78,7 @@ export default function component() {
 
   homeBtn.addEventListener('click', homeComponent);
 
-  const contactBtn = document.getElementById('contact-btn');
+  
 
   const contactComponent = () => {
     while(contentContainer.firstChild){
@@ -66,5 +90,3 @@ export default function component() {
   contactBtn.addEventListener('click', contactComponent);
 
 }
-
-component();
