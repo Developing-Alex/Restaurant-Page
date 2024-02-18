@@ -30,7 +30,11 @@ const homePageLoader = (container) => {
   chefImage.src = Chef;
   chefImage.id = 'chef-image';
 
-  const contentArr = [heading, about, chefImage];
+  const orderOnline = document.createElement('p');
+  orderOnline.id = 'order-online';
+  orderOnline.innerText = 'Order online now available!'
+
+  const contentArr = [heading, about, chefImage, orderOnline];
 
   contentArr.forEach(e => container.appendChild(e));
 
