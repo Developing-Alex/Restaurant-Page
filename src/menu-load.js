@@ -1,4 +1,4 @@
-const menuPageLoader = (container) => {  
+export default function menuPageLoader(container){  
   
   //Meats
 
@@ -171,5 +171,3 @@ const menuPageLoader = (container) => {
 
   return container;
 }
-
-export default menuPageLoader;
