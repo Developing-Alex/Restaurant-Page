@@ -72,10 +72,10 @@ button {
   border-bottom: 3px whitesmoke solid;
   padding: 6px;
   width: 120px;
-  margin-top: 0;
-  margin-bottom: 15px;
   cursor: pointer;
   transition-duration: 0.15s;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 button:hover {
@@ -137,7 +137,7 @@ button:hover {
 #chef-image {
   border-radius: 49%;
   width: 200px;
-  border: whitesmoke solid 3px;
+  border: whitesmoke dotted 3px;
   animation: fadeIn 1.5s;
 }
 
@@ -177,12 +177,39 @@ button:hover {
   color: whitesmoke;
   font-family: 'Limelight';
   margin: 0;
+  animation: fadeIn 1.5s;
 }
 
 #sides-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+}
+
+#order-click {
+  width: 200px;
+  height: 50px;
+  animation: fadeIn 1.5s;
+}
+
+#contact-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn 1.5s;
+}
+
+.contact-info {
+  font-family: 'Barlow';
+  font-weight: bold;
+  color: whitesmoke;
+  margin: 0;
+}
+
+#location-map {
+  width: 400px;
+  border-radius: 10px;
+  animation: fadeIn 1.5s;
 }
 
 @keyframes fadeIn {
