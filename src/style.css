@@ -17,6 +17,9 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-image: url('./assets/images/gingham-fried-chicken.jpg');
   background-position: center;
   background-size: cover;
@@ -28,12 +31,14 @@ body {
 header {
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 0, 0, 0.614);
+  width: 100%;
+  background-color: rgba(255, 0, 0, .6);
   color: whitesmoke;
   justify-content: center;
   align-items: center;
   height: 150px;
   gap: 15px;
+  border-bottom: 3px whitesmoke solid;
 }
 
 nav {
@@ -97,7 +102,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: rgba(255, 0, 0, 0.6);
   width: 600px;
   min-height: 500px;
   border-radius: 15px;
@@ -154,7 +159,7 @@ button:hover {
   border: rgb(0, 0, 0) dotted 3px;
 }
 
-.menu-item-title {
+.menu-item-name {
   font-family: 'Limelight';
   margin: 0;
 }

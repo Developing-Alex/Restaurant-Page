@@ -1,89 +1,51 @@
-export default function menuPageLoader(container){  
-  
-  //Meats
+function createMenuItem(name, description) {
+  const menuItem = document.createElement("div");
+  menuItem.className = 'menu-item';
 
+  const foodName = document.createElement("h3");
+  foodName.innerHTML = name;
+  foodName.className = 'menu-item-name';
+
+  const foodDescription = document.createElement("p");
+  foodDescription.innerHTML = description;
+  foodDescription.className = 'menu-item-description';
+
+  menuItem.appendChild(foodName);
+  menuItem.appendChild(foodDescription);
+
+  return menuItem;
+}
+
+export default function createMenu(container){
   const meatContainer = document.createElement('div');
   meatContainer.id = 'meat-container';
 
   const meatTitle = document.createElement('h2');
   meatTitle.id = 'meat-title';
-  meatTitle.className = 'menu-title'
+  meatTitle.className = 'menu-title';
   meatTitle.innerText = 'Meats';
 
-  const chicken = document.createElement('div');
-  chicken.id = 'chicken-container';
-  chicken.className = 'menu-item';
-
-  const chickenTitle = document.createElement('h3');
-  chickenTitle.id = 'chicken-title';
-  chickenTitle.className = 'menu-item-title';
-  chickenTitle.innerText = 'Barbeque Chicken';
-
-  const chickenDescription = document.createElement('p');
-  chickenDescription.id = 'chicken-description';
-  chickenDescription.className = 'menu-item-description';
-  chickenDescription.innerText = 'Dubbed "Best Chicken in America!". One half of a chicken is barbequed to mouth watering perfection, then smothered in our "Smokey, Spicey & Sweet" barbeque sauce!';
-
-  chicken.appendChild(chickenTitle);
-  chicken.appendChild(chickenDescription);
-
-  const brisket = document.createElement('div');
-  brisket.id = 'brisket-container';
-  brisket.className = 'menu-item';
-
-  const brisketTitle = document.createElement('h3');
-  brisketTitle.id = 'brisket-title';
-  brisketTitle.className = 'menu-item-title';
-  brisketTitle.innerText = 'Brisket';
-
-  const brisketDescription = document.createElement('p');
-  brisketDescription.id = 'brisket-description';
-  brisketDescription.className = 'menu-item-description';
-  brisketDescription.innerHTML = `Succulent beef brisket smoked to perfection, incredible flavour all by itself but served with a side of our "Smokey, Spicey & Sweet" barbeque sauce to give it that extra <em>umph</em>!`;
+  const chicken = createMenuItem(
+    'Barbeque Chicken',
+    'Dubbed "Best Chicken in America!". One half of a chicken is barbequed to mouth watering perfection, then smothered in our "Smokey, Spicey & Sweet" barbeque sauce!'
+  );
   
-  brisket.appendChild(brisketTitle);
-  brisket.appendChild(brisketDescription);
-
-
-  const babyBackRibs = document.createElement('div');
-  babyBackRibs.id = 'baby-back-ribs-container';
-  babyBackRibs.className = 'menu-item';
-
-  const babyBackRibsTitle = document.createElement('h3');
-  babyBackRibsTitle.id = 'baby-back-ribs-title';
-  babyBackRibsTitle.className = 'menu-item-title';
-  babyBackRibsTitle.innerText = 'Baby-Back Ribs';
-
-  const babyBackRibsDescription = document.createElement('p');
-  babyBackRibsDescription.id = 'baby-back-ribs-description';
-  babyBackRibsDescription.className = 'menu-item-description';
-  babyBackRibsDescription.innerHTML = `Fall of the bone tender baby-back ribs that speak for themselves! Served with a side of our "Smokey, Spicey & Sweet" barbeque sauce!`;
+  const brisket = createMenuItem(
+    'Brisket',
+    `Succulent beef brisket smoked to perfection, incredible flavour all by itself but served with a side of our "Smokey, Spicey & Sweet" barbeque sauce to give it that extra <em>umph</em>!`
+  );
+  const ribs = createMenuItem(
+    'Baby Back Ribs',
+    `Fall of the bone tender baby-back ribs that speak for themselves! Served with a side of our "Smokey, Spicey & Sweet" barbeque sauce!`
+  )
+  const pulledPork = createMenuItem(
+    'Pulled Pork',
+    `Pork shoulder so tender and juicy, you'll wanna call your meemaw to spread the word! Served with a side of our "Smokey, Spicey & Sweet" barbeque sauce!`
+  );
   
-  babyBackRibs.appendChild(babyBackRibsTitle);
-  babyBackRibs.appendChild(babyBackRibsDescription);
+  const meatMenu = [chicken, brisket, ribs,pulledPork];
 
-  const pulledPork = document.createElement('div');
-  pulledPork.id = 'pulled-pork-container';
-  pulledPork.className = 'menu-item';
-
-  const pulledPorkTitle = document.createElement('h3');
-  pulledPorkTitle.id = 'pulled-pork-title';
-  pulledPorkTitle.className = 'menu-item-title';
-  pulledPorkTitle.innerText = 'Pulled Pork';
-
-  const pulledPorkDescription = document.createElement('p');
-  pulledPorkDescription.id = 'pulled-pork-description';
-  pulledPorkDescription.className = 'menu-item-description';
-  pulledPorkDescription.innerHTML = `Pork shoulder so tender and juicy, you'll wanna call your meemaw to spread the word! Served with a side of our "Smokey, Spicey & Sweet" barbeque sauce!`;
-  
-  pulledPork.appendChild(pulledPorkTitle);
-  pulledPork.appendChild(pulledPorkDescription);
-
-  const meatMenu = [chicken, brisket, babyBackRibs, pulledPork];
-
-  meatMenu.forEach(e => meatContainer.appendChild(e));
-
-  //Sides
+  meatMenu.forEach(meat => meatContainer.appendChild(meat));
 
   const sidesContainer = document.createElement('div');
   sidesContainer.id = 'sides-container';
@@ -93,81 +55,34 @@ export default function menuPageLoader(container){
   sidesTitle.className = 'menu-title';
   sidesTitle.innerText = 'Sides';
 
-  const bakedBeans = document.createElement('div');
-  bakedBeans.id = 'baked-beans-container';
-  bakedBeans.className = 'menu-item';
+  const beans = createMenuItem(
+    'Baked Beans',
+    "Grandma's recipe! A crowd favorite! Saucy, rich and complexe flavor that never disappoints!"
+  );
 
-  const bakedBeansTitle = document.createElement('h3');
-  bakedBeansTitle.id = 'baked-beans-title';
-  bakedBeansTitle.className = 'menu-item-title';
-  bakedBeansTitle.innerText = 'Baked Beans';
+  const cornBread = createMenuItem(
+    'Honey Corn Bread',
+    "Moist honey drizzled corn bread, hot and ready to enjoy!"
+  );
 
-  const bakedBeansDescription = document.createElement('p');
-  bakedBeansDescription.id = 'baked-beans-description';
-  bakedBeansDescription.className = 'menu-item-description';
-  bakedBeansDescription.innerText = "Grandma's recipe! A crowd favorite! Saucy, rich and complexe flavor that never disappoints!";
+  const macAndCheese = createMenuItem(
+    "Mac-n-Cheese",
+    "Melted into a rich and creamy cheese sauce, for the ultimate in cheesy deliciousness!"
+  )
 
-  bakedBeans.appendChild(bakedBeansTitle);
-  bakedBeans.appendChild(bakedBeansDescription);
+  const coleslaw = createMenuItem(
+    'Coleslaw',
+    "Light and creamy with a sweet tangyness that pairs well with our assortment of meats!"
+  )
 
-  const cornBread = document.createElement('div');
-  cornBread.id = 'corn-bread-container';
-  cornBread.className = 'menu-item';
+  const sidesMenu = [beans, cornBread, macAndCheese, coleslaw];
 
-  const cornBreadTitle = document.createElement('h3');
-  cornBreadTitle.id = 'corn-bread-title';
-  cornBreadTitle.className = 'menu-item-title';
-  cornBreadTitle.innerText = 'Honey Corn Bread';
+  sidesMenu.forEach(side => sidesContainer.appendChild(side));
 
-  const cornBreadDescription = document.createElement('p');
-  cornBreadDescription.id = 'corn-bread-description';
-  cornBreadDescription.className = 'menu-item-description';
-  cornBreadDescription.innerText = "Moist honey drizzled corn bread, hot and ready to enjoy!";
+  const menu = [meatTitle, meatContainer, sidesTitle, sidesContainer];
 
-  cornBread.appendChild(cornBreadTitle);
-  cornBread.appendChild(cornBreadDescription);
+  menu.forEach(menuContainer => container.appendChild(menuContainer));
 
-  const macAndCheese = document.createElement('div');
-  macAndCheese.id = 'mac-n-cheese-container';
-  macAndCheese.className = 'menu-item';
-
-  const macAndCheeseTitle = document.createElement('h3');
-  macAndCheeseTitle.id = 'mac-n-cheese-title';
-  macAndCheeseTitle.className = 'menu-item-title';
-  macAndCheeseTitle.innerText = 'Mac-n-Cheese';
-
-  const macAndCheeseDescription = document.createElement('p');
-  macAndCheeseDescription.id = 'mac-n-cheese-description';
-  macAndCheeseDescription.className = 'menu-item-description';
-  macAndCheeseDescription.innerText = "Melted into a rich and creamy cheese sauce, for the ultimate in cheesy deliciousness!";
-
-  macAndCheese.appendChild(macAndCheeseTitle);
-  macAndCheese.appendChild(macAndCheeseDescription);
-
-  const coleslaw = document.createElement('div');
-  coleslaw.id = 'colslaw-container';
-  coleslaw.className = 'menu-item';
-
-  const coleslawTitle = document.createElement('h3');
-  coleslawTitle.id = 'coleslaw-title';
-  coleslawTitle.className = 'menu-item-title';
-  coleslawTitle.innerText = 'Coleslaw';
-
-  const coleslawDescription = document.createElement('p');
-  coleslawDescription.id = 'colslaw-description';
-  coleslawDescription.className = 'menu-item-description';
-  coleslawDescription.innerText = "Light and creamy with a sweet tangyness that pairs well with our assortment of meats!";
-
-  coleslaw.appendChild(coleslawTitle);
-  coleslaw.appendChild(coleslawDescription);
-
-  const sidesMenu = [bakedBeans, cornBread, macAndCheese, coleslaw];
-
-  sidesMenu.forEach(e => sidesContainer.appendChild(e));
-
-  const menu = [meatTitle, meatContainer, sidesTitle, sidesContainer]
-
-  menu.forEach(e => container.appendChild(e));
-
-  return container;
+  return container
 }
+
