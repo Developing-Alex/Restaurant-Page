@@ -29,10 +29,6 @@ const loadHeader = () => {
   header.appendChild(title);
   header.appendChild(nav);
 
-  //const headerElements = [title, nav];
-
-  //headerElements.forEach(element => header.appendChild(element));
-
   document.body.appendChild(header);
 
 }

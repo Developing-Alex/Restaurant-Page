@@ -17,6 +17,8 @@ function createMenuItem(name, description) {
 }
 
 export default function createMenu(container){
+
+  //Meat Menu
   const meatContainer = document.createElement('div');
   meatContainer.id = 'meat-container';
 
@@ -46,6 +48,8 @@ export default function createMenu(container){
   const meatMenu = [chicken, brisket, ribs,pulledPork];
 
   meatMenu.forEach(meat => meatContainer.appendChild(meat));
+
+  //Sides Menu
 
   const sidesContainer = document.createElement('div');
   sidesContainer.id = 'sides-container';
@@ -78,6 +82,8 @@ export default function createMenu(container){
   const sidesMenu = [beans, cornBread, macAndCheese, coleslaw];
 
   sidesMenu.forEach(side => sidesContainer.appendChild(side));
+
+  //Generating the whole menu 
 
   const menu = [meatTitle, meatContainer, sidesTitle, sidesContainer];
 
